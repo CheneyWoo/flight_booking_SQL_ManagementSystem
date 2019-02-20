@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>用户注册</title>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Govihar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Custom Theme files -->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
+<!-- js -->
+<script src="js/jquery.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<!-- //js -->
+<!-- fonts -->
+<!-- //fonts -->
+<!--pop-up-->
+<script src="js/menu_jquery.js"></script>
+<!--//pop-up-->
+</head>
+<body>
+	<!--header-->
+	<div class="header">
+		<div class="container">
+			<div class="header-grids">
+				<!--logo-->
+				<div class="logo">
+					<h1><a  href="homepage.jsp"><span>机票</span>SALE</a></h1>
+				</div>
+				<!--login icon-->
+				<div class="dropdown-grids">
+					<div id="usericon" style="display:none"><a href="user_list.jsp"><img src="images/user.png" style="height:40px;width:40px"></a></div>
+					<div id="loginContainer" style="display:inline-block"><a href="#" id="loginButton"><span>登录/注册</span></a>
+						<!--login box-->
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--//header-->
+	<!-- banner-bottom -->
+	<div class="banner-bottom">
+		<!-- container -->
+		<div class="container">
+			<div class="faqs-top-grids">
+				<div class="book-grids">
+					<div class="col-md-6 book-left">
+						<div style="color:#868686">
+							<h3>请创建你的账户</h3>
+						</div>
+						<div class="book-left-form">
+							<form>
+								<p>姓名</p>
+								<input class="inputClass" type="text" name="userName" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+								<p>登陆密码</p>
+								<input class="inputClass" type="password" name="userPsd">
+								<p>手机号码</p>
+								<input class="inputClass" type="text" name="userID" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+								<p>身份证号</p>
+								<input class="inputClass" type="text" name="userCard"value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+								<p>年龄</p>
+								<input class="inputClass" type="text" name="userAge" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+								<p>所在地</p>
+								<input class="inputClass" type="text" name="userPlace" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+								<label for="checkbox">
+								<input type="button" id="register_btn" value="Register">
+							</form>
+						</div>
+					</div>
+					<div class="col-md-6 book-left book-right">
+						<div style="color: #868686">
+							<h3>欢迎您的加入</h3>
+							<ul>
+								<li>我们有——</li>
+								<li style="color: rgb(77, 130, 183);">最低廉的价格</li>
+								<li style="color: rgb(77, 130, 183);">最舒适的体验</li>
+								<li style="color: rgb(77, 130, 183);">最便捷的服务</li>
+								<li style="color: rgb(77, 130, 183);" >请选择<b>机票SALE</b></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script src="js/DisplayIcon.js"></script>
+	<script type="text/javascript">
+		function checkPsd(s){
+			var test_num = /[0-9]/;
+			var test_abc = /[a-z]/i;
+			var b1 = test_num.test(s);
+			var b2 = test_abc.test(s);
+			var b3=false;
+			if(s.length>=6){
+			    b3=true;
+			}
+			return b1&b2&b3;
+		}
+        $("#register_btn").click(function(){ //点击注册
+            //event.preventDefault();
+            var userName = $("input[name='userName']").val();//对象是单选选项
+            var userPsd = $("input[name='userPsd']").val();
+            var userID = $("input[name='userID']").val();
+            var userCard = $("input[name='userCard']").val();
+            var userAge = $("input[name='userAge']").val();
+            var userPlace = $("input[name='userPlace']").val();
+            if(userName==""){
+                alert("请输入姓名！")
+			}else if(userPsd==""){
+                alert("请输入密码！")
+			}else if(!checkPsd(userPsd)){
+                alert("密码长度至少6为且必须包含数字和字母！")
+			}else if(userID==""){
+                alert("请输入手机号！")
+			}else if(userCard==""){
+                alert("请输入身份证号！")
+			}else if(userAge==""){
+                alert("请输入年龄！")
+			}else if(userPlace==""){
+                alert("请输入所在地！")
+			}else if(userID.length!=11){
+                alert("手机号格式错误！")
+			}else if(userCard.length!=18){
+                alert("身份证号格式错误！")
+			}else{
+                $.ajax({
+                    type:"post",
+                    dataType:'json',
+                    url:'register_file_servlet_action',
+                    data:{userName:userName,userPsd:userPsd,userID:userID,userCard:userCard,userAge:userAge,userPlace:userPlace},
+                    success: function (data) {
+                        var result = data.result;
+                        if(result==0){
+                            alert("该用户已存在！");
+						}
+                        else if(result==1){
+                            alert("注册成功！");
+                            window.open("homepage.jsp");
+                            //DisplayIcon(1);
+						}
+                        //window.open("homepage.jsp");
+                    },
+                    error : function() {
+                        alert("异常！");
+                    }
+                });
+			}
+        });
+//在当前窗口跳转 + check
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+	</script>
+</body>
+</html>
